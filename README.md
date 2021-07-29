@@ -24,3 +24,7 @@ Te será de gran ayuda:
 - Primeros pasos con el API de ML. Creación de la aplicación, autenticación, etc: https://developers.mercadolibre.com.ar/es_ar/primeros-pasos
 - Guia API de articulos (items): https://developers.mercadolibre.com.ar/es_ar/items-y-busquedas
 - ML tiene un sdk para PHP que podes usar si preferís: https://developers.mercadolibre.com.ar/es_ar/herramientas
+
+
+# Installation
+php artisan key:generate
