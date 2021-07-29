@@ -21,6 +21,7 @@ class HomeController extends Controller
             $products = response()->json(new ProductsResource($this->model->getProducts($request->get('code'))));
             return view('home', ['products' => $products->getData()]);
         } catch (\Exception $exception) {
+            dd($exception->getMessage());
             return redirect()->back()->with('error', $exception->getMessage());
         }
     }

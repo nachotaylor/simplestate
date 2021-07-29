@@ -17,4 +17,4 @@ Route::get( '/', function () {
     return view( 'home', [ 'url' => env( 'MP_URL_AUTHORIZATION' ) ] );
 } );
 
-Route::get('/notifications','App\Http\Controllers\HomeController@home')->name('notifications');
+Route::get('/products','App\Http\Controllers\HomeController@home')->name('products');
