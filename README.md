@@ -3,7 +3,7 @@ In root directory run from terminal:
 - composer install
 - php artisan key:generate
 - cp .env.example .env 
-Create Meli app (https://developers.mercadolibre.com.ar/devcenter/create-app)
+- Create Meli app (https://developers.mercadolibre.com.ar/devcenter/create-app)
 set in .env MP_APP_ID / MP_CLIENT_SECRET / MP_REDIRECT_URI(*) taking from Meli App ID / Client Secret / Redirect URI 
   (*)MP_REDIRECT_URI: cannot be https://localhost/
 
