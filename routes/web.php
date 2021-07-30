@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get( '/', function () {
-    return view( 'home', [ 'url' => env( 'MP_URL_AUTHORIZATION' ) ] );
-} );
+Route::get('/', function () {
+    return view('home', ['url' => env('MP_URL_AUTHORIZATION')]);
+});
 
-Route::get('/products','App\Http\Controllers\HomeController@home')->name('products');
+Route::get('/products', 'App\Http\Controllers\HomeController@home')->name('products');

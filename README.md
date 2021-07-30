@@ -1,3 +1,16 @@
+# Installation
+In root directory run from terminal:
+- composer install
+- php artisan key:generate
+- cp .env.example .env 
+Create Meli app (https://developers.mercadolibre.com.ar/devcenter/create-app)
+set in .env MP_APP_ID / MP_CLIENT_SECRET / MP_REDIRECT_URI(*) taking from Meli App ID / Client Secret / Redirect URI 
+  (*)MP_REDIRECT_URI: cannot be https://localhost/
+
+# Run tests
+In root directory run from terminal:
+- ./vendor/bin/phpunit --filter ProductsTest
+
 # simplestate
 
 Consiste en realizar una aplicación con el framework Laravel integrando el API de MercadoLibre.
@@ -24,7 +37,3 @@ Te será de gran ayuda:
 - Primeros pasos con el API de ML. Creación de la aplicación, autenticación, etc: https://developers.mercadolibre.com.ar/es_ar/primeros-pasos
 - Guia API de articulos (items): https://developers.mercadolibre.com.ar/es_ar/items-y-busquedas
 - ML tiene un sdk para PHP que podes usar si preferís: https://developers.mercadolibre.com.ar/es_ar/herramientas
-
-
-# Installation
-php artisan key:generate

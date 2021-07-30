@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,21 +11,38 @@ class Home extends Model
 {
     use HasFactory;
 
+    /**
+     * Get token from Meli API
+     * @param $client
+     * @param $code
+     * @return null
+     * @throws Exception
+     */
     private function getToken($client, $code)
     {
-        $body = [
-            'code' => $code,
-            'client_id' => env('MP_APP_ID'),
-            'client_secret' => env('MP_CLIENT_SECRET'),
-            'redirect_uri' => env('MP_REDIRECT_URI'),
-            'grant_type' => 'authorization_code'
-        ];
+        try {
+            $body = [
+                'code' => $code,
+                'client_id' => env('MP_APP_ID'),
+                'client_secret' => env('MP_CLIENT_SECRET'),
+                'redirect_uri' => env('MP_REDIRECT_URI'),
+                'grant_type' => 'authorization_code'
+            ];
 
-        $response = $client->post(env('MP_URL_GET_TOKEN'), ['form_params' => $body]);
+            $response = $client->post(env('MP_URL_GET_TOKEN'), ['form_params' => $body]);
 
-        return json_decode($response->getBody()->getContents())->access_token ?? null;
+            return json_decode($response->getBody()->getContents())->access_token ?? null;
+        } catch (Exception $exception) {
+            throw new Exception("Invalid token");
+        }
     }
 
+    /**
+     * Get 10 A/C products from Meli order desc by price
+     * @param $code
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function getProducts($code)
     {
         if (!$code) {

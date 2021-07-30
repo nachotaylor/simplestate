@@ -22,9 +22,12 @@
 </nav>
 
 <div class="container">
-    @if(Session::has('error'))
+    @if($errors->any() || session('error'))
         <div class="alert alert-danger" role="alert">
-            {{ Session::get('error') }}
+            @foreach ($errors->all() as $error_message)
+                <p>{{ $error_message }}</p>
+            @endforeach
+            <p>{{ session('error') }}</p>
         </div>
     @endif
     @isset($products)
