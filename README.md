@@ -4,8 +4,9 @@ In root directory run from terminal:
 - php artisan key:generate
 - cp .env.example .env 
 - Create Meli app (https://developers.mercadolibre.com.ar/devcenter/create-app)
-set in .env MP_APP_ID / MP_CLIENT_SECRET / MP_REDIRECT_URI(*) taking from Meli App ID / Client Secret / Redirect URI 
-  (*)MP_REDIRECT_URI: cannot be https://localhost/
+- Set in Meli app Redirect URI https://localhost/simplestate/public/products (to run in localhost)
+- Set in .env MP_APP_ID / MP_CLIENT_SECRET taking from Meli App ID / Client Secret 
+
 
 # Run tests
 In root directory run from terminal:
