@@ -1,8 +1,6 @@
 # Installation
 In root directory run from terminal:
-- composer install
-- php artisan key:generate
-- cp .env.example .env 
+- bash install.sh
 - Create Meli app (https://developers.mercadolibre.com.ar/devcenter/create-app)
 - Set in Meli app Redirect URI https://localhost/simplestate/public/products (to run in localhost)
 - Set in .env MP_APP_ID / MP_CLIENT_SECRET taking from Meli App ID / Client Secret 
